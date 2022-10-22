@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import {DashboardPageComponent} from "./components/pages/dashboard-page/dashboard-page.component";
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { StepTwoComponent } from './components/step-two/step-two.component';
+import { Step1Component } from './components/step1/step1.component';
 import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 
 const routes: Routes = [
   {
     // Initial questions path
     path: '',
-    component: AppComponent,
+    component: Step1Component,
+    pathMatch: 'full',
+  },
+  {
+    path: 'rooms',
+    component: StepTwoComponent,
   },
   {
     // TODO: insert categories screen here
