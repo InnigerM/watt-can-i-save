@@ -22,8 +22,7 @@ export class CategoryCardComponent implements OnInit {
   }
 
   submit(){
-    this.router.navigate(['categories', this.name, 'questions'])
-    console.log("called submit")
+    this.router.navigate(['categories', this.name.toLowerCase()]);
   }
 
 }
