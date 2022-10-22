@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { Step1Component } from './components/step1/step1.component';
 
 const routes: Routes = [
   {
     // Initial questions path
     path: '',
-    component: AppComponent,
+    component: Step1Component,
+    pathMatch: 'full',
   },
   {
     // TODO: insert categories screen here
@@ -30,9 +33,8 @@ const routes: Routes = [
     component: AppComponent,
   },
   {
-    // TODO: insert dashboard screen here
     path: 'dashboard',
-    component: AppComponent,
+    component: DashboardPageComponent,
   },
 ];
 
