@@ -3,12 +3,12 @@
   <label class="label">
     <span class="label-text">Wo wohnst du?</span>
   </label>
-  <input type="text" placeholder="Dein Ort" class="input input-bordered w-full max-w-xs" [(ngModel)]="city" (keyup)="saveElectricityPrices($event)"/>
+  <input type="text" placeholder="Dein Ort" class="input input-bordered w-full max-w-xs" [(ngModel)]="city" (keyup)="searchElectricityPrices($event)"/>
 </div>
 
 <div class="cities">
 
-  <div *ngFor="let electricityPrice of electricityPrices$ | async" class="city bg-primary-content">
+  <div *ngFor="let electricityPrice of electricityPrices$ | async" class="city bg-neutral" (click)="selectPrice(electricityPrice)">
     <label class="label cursor-pointer electricity-price">
       <input type="radio" name="radio-2" class="radio radio-primary" />
       <div class="text">
@@ -19,4 +19,6 @@
   </div>
 
 </div>
+
+<button class="btn btn-primary" *ngIf="selectedPrice" (click)="savePrice()">Weiter</button>
 

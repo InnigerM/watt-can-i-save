@@ -14,11 +14,21 @@ export class Step1Component {
   city: string;
   selectedPrice: ElectricityPrice;
 
-  constructor(private eps: ElectricityPriceService) {}
+  constructor(private electricityPriceService: ElectricityPriceService) {}
 
-  saveElectricityPrices(event: any) {
-    console.log(event);
-    this.electricityPrices$ = this.eps.getCity(this.city);
+  searchElectricityPrices(event: any) {
+    this.selectedPrice = null;
+    this.electricityPrices$ = this.electricityPriceService.getCity(this.city);
+  }
+
+  selectPrice(electricityPrice: ElectricityPrice) {
+    this.selectedPrice = electricityPrice;
+  }
+
+  savePrice() {
+    console.log("save")
+    this.electricityPriceService.savePrice(this.selectedPrice);
+
   }
 
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,  } from '@angular/common/http';
-import {  first, map, Observable, take } from 'rxjs';
+import {  map, Observable } from 'rxjs';
 import { ElectricityPrice } from '../models/electricity-price';
+import { ELECTRICITY_PRICE_KEY } from '../utils';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,13 @@ export class ElectricityPriceService {
       )),
       map(prices => prices.slice(0, 5))
     );
-
   }
 
+  savePrice(electricityPrice: ElectricityPrice) {
+    localStorage.setItem(ELECTRICITY_PRICE_KEY, JSON.stringify(electricityPrice));
+  }
 
+  getPrice(): ElectricityPrice {
+   return  JSON.parse(localStorage.getItem(ELECTRICITY_PRICE_KEY))
+  }
 }
