@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
 import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: '',
     component: Step1Component,
     pathMatch: 'full',
+  },
+  {
+    path: 'rooms',
+    component: StepTwoComponent,
   },
   {
     // TODO: insert categories screen here

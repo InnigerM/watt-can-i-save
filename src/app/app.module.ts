@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,8 +16,11 @@ import { ChallengesComponent } from './components/challenges/challenges.componen
     AppComponent,
     NavbarComponent,
     ChallengesComponent,
-    Step1Component,
     DashboardPageComponent,
+    Step1Component,
+    StepTwoComponent,
+    DashboardPageComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
