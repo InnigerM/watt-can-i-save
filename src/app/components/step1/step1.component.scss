@@ -1,0 +1,21 @@
+.cities {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 15px;
+
+  .city {
+    border-radius: 8px;
+
+    .electricity-price {
+      justify-content: flex-start;
+      gap: 25px;
+
+
+      .text {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
