@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -12,17 +13,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    StepTwoComponent,
     Step1Component,
     DashboardPageComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
