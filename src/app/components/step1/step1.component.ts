@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ElectricityPrice } from 'src/app/models/electricity-price';
 import { ElectricityPriceService } from 'src/app/services/electricity-price.service';
@@ -14,7 +15,7 @@ export class Step1Component {
   city: string;
   selectedPrice: ElectricityPrice;
 
-  constructor(private electricityPriceService: ElectricityPriceService) {}
+  constructor(private electricityPriceService: ElectricityPriceService, private router: Router) {}
 
   searchElectricityPrices(event: any) {
     this.selectedPrice = null;
@@ -26,9 +27,8 @@ export class Step1Component {
   }
 
   savePrice() {
-    console.log("save")
     this.electricityPriceService.savePrice(this.selectedPrice);
-
+    this.router.navigate(['/rooms']);
   }
 
 }
