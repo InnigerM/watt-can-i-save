@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
 import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
+import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     // TODO: insert categories screen here
     path: 'categories',
-    component: AppComponent,
+    component: CategoryOverviewComponent,
   },
   {
     // TODO: insert challenges overview screen here

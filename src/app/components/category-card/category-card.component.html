@@ -1,0 +1,18 @@
+<div class="card bg-base-100 shadow-xl bg-primary image-full text-secondary-content" (click)="submit()">
+  <figure><img [src]="imageSrc"/></figure>  
+  <div class="card-body">
+    <div class="flex items-center justify-center mb-4">
+      <h2 class="card-title font-bold">{{name}}</h2>
+    </div>
+    <div class="flex text-center"><p>{{description}}</p></div>
+    <div class="flex items-center justify-center mt-4">
+      <span class="material-symbols-outlined text-5xl text-secondary">
+        {{icon}}
+      </span>
+    </div> 
+    
+    <div class="card-actions justify-end">
+    </div>
+  </div>
+</div>
+

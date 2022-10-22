@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
+import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
@@ -17,6 +19,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     Step1Component,
     DashboardPageComponent,
     NavbarComponent,
+    CategoryOverviewComponent,
+    CategoryCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
