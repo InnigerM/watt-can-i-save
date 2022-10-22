@@ -4,8 +4,8 @@ interface Category {
   active: boolean,
   name: string,
   description: string,
-  backgroundImage?: string,
-  icon?: string
+  backgroundImage: string,
+  icon: string
 }
 
 @Component({
@@ -18,17 +18,30 @@ export class CategoryOverviewComponent implements OnInit {
     {
       active: true,
       name: 'Haushalt',
-      description: 'Backofen vorheizen? Alles Rund um Fehler, die du im Haushalt vermeiden solltest.'
+      description: 'Backofen vorheizen? Alles Rund um Fehler, die du im Haushalt vermeiden solltest.',
+      icon: "cottage",
+      backgroundImage: "/assets/img/household.jpg"
     },
     {
       active: false,
       name: 'Warmwasser',
-      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+      description: 'Warmduscher oder der Kälteschock zum wach werden?',
+      icon: "water_drop",
+      backgroundImage: "/assets/img/water.jpg"
     },
     {
       active: false,
       name: 'Heizen',
-      description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+      description: 'Greifen wir zukünftig auch zu der Jacke im Haus?',
+      icon: "local_fire_department",
+      backgroundImage: "/assets/img/heater.jpg"
+    },
+    {
+      active: false,
+      name: 'Elektronik',
+      description: 'Zuhause lauern viele kleine Stromfresser, finde sie jetzt!',
+      icon: "electrical_services",
+      backgroundImage: "/assets/img/electronics.jpg"
     }
   ];
 
