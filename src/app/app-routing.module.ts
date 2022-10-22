@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
   {
     // TODO: insert categories screen here
     path: 'categories',
-    component: AppComponent,
+    component: CategoryOverviewComponent,
   },
   {
     // TODO: insert challenges overview screen here
