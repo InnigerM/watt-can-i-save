@@ -28,6 +28,6 @@ export class ElectricityPriceService {
   }
 
   getPrice(): ElectricityPrice {
-   return  JSON.parse(localStorage.getItem(ELECTRICITY_PRICE_KEY))
+   return  JSON.parse(localStorage.getItem(ELECTRICITY_PRICE_KEY));
   }
 }
