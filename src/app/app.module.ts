@@ -11,12 +11,16 @@ import { DashboardPageComponent } from './components/pages/dashboard-page/dashbo
 import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ChallengesComponent } from './components/challenges/challenges.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepTwoComponent,
+    NavbarComponent,
+    ChallengesComponent,
+    DashboardPageComponent,
     Step1Component,
+    StepTwoComponent,
     DashboardPageComponent,
     NavbarComponent,
     CategoryOverviewComponent,
