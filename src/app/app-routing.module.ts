@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import {DashboardPageComponent} from "./components/pages/dashboard-page/dashboard-page.component";
 import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 
 const routes: Routes = [
@@ -30,9 +31,8 @@ const routes: Routes = [
     component: AppComponent,
   },
   {
-    // TODO: insert dashboard screen here
     path: 'dashboard',
-    component: AppComponent,
+    component: DashboardPageComponent,
   },
 ];
 
