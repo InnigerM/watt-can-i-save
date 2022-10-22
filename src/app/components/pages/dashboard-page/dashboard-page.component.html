@@ -1,0 +1,43 @@
+<h1 class="text-center text-5xl font-bold mt-8">Deine Übersicht</h1>
+<div class="flex justify-center mt-4">
+  <div class="stats shadow stats-vertical w-full sm:stats-horizontal">
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+      <span class="material-symbols-outlined">
+        military_tech
+      </span>
+      </div>
+      <div class="stat-title">Level</div>
+      <div class="stat-value">{{ level }}</div>
+      <div class="stat-desc">{{ points }} Punkte</div>
+    </div>
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+      <span class="material-symbols-outlined">
+        savings
+      </span>
+      </div>
+      <div class="stat-title">Geld gespart</div>
+      <div class="stat-value">CHF {{ savings }}</div>
+      <div class="stat-desc">pro Jahr</div>
+    </div>
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+      <span class="material-symbols-outlined">
+        verified
+      </span>
+      </div>
+      <div class="stat-title">Abgeschlossene Challenges</div>
+      <div class="stat-value">{{ completedChallenges }}</div>
+      <button class="btn btn-xs btn-primary w-fit mt-2">Neue Challenge</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="flex justify-center mt-8">
+  <div class="radial-progress text-primary text-center" style="--value:70; --size: 12rem">
+    <div class="stat-value">{{ pointsForNextLevel }}</div>
+    <div class="stat-desc opacity-60 text-white">Punkte bis Level {{ level + 1 }}</div>
+  </div>
+</div>
