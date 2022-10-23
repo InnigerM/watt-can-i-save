@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StateService } from 'src/app/services/state.service';
@@ -67,8 +67,7 @@ export class WaterQuestionsComponent {
       10,
       !['kalt', 'lauwarm'].find((v) => values.showerTemp === v)
     );
-    this.challengeService.setChallengeSolved(3, !values.hasEcoShowerHead);
     this.stateService.setQuestionsSolved('warmwasser');
-    this.router.navigate(['categories/water']);
+    this.router.navigate(['categories/warmwasser']);
   };
 }
