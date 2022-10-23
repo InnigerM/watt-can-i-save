@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-devices-questions',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevicesQuestionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private stateService: StateService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.stateService.setQuestionsSolved('elektronik');
+    this.router.navigate(['categories/elektronik'])
+  }
 }

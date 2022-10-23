@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DashboardPageComponent} from "./components/pages/dashboard-page/dashboard-page.component";
-import {QuestionPageComponent} from "./components/pages/question-page/question-page.component";
+import { DashboardPageComponent } from './components/pages/dashboard-page/dashboard-page.component';
+import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
 import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
@@ -19,46 +19,51 @@ const routes: Routes = [
     path: '',
     component: Step1Component,
     pathMatch: 'full',
-    canActivate:[InitalSetupNotComplete],
+    canActivate: [InitalSetupNotComplete],
   },
   {
     path: 'rooms',
     component: StepTwoComponent,
-    canActivate:[InitalSetupNotComplete],
+    canActivate: [InitalSetupNotComplete],
   },
   {
     path: 'light-switch',
     component: LightSwitchComponent,
-    canActivate:[InitalSetupNotComplete],
+    canActivate: [InitalSetupNotComplete],
   },
-  {path: '', canActivate:[InitalSetupComplete], children: [
-    {
-      path: 'categories',
-      component: CategoryOverviewComponent,
-    },
-    {
-      path: 'categories/:category',
-      component: ChallengesComponent,
-    },
-    {
-      path: 'categories/:category/questions',
-      component: QuestionPageComponent,
-      canActivate: [QuestionGuard]
-    },
-    {
-      path: 'categories/:category/challenges/:id',
-      component: ChallengesDetailComponent,
-    },
-    {
-      path: 'dashboard',
-      component: DashboardPageComponent,
-    },
-  ]}
-
+  {
+    path: '',
+    canActivate: [InitalSetupComplete],
+    children: [
+      {
+        path: 'categories',
+        component: CategoryOverviewComponent,
+      },
+      {
+        path: 'categories/:category',
+        component: ChallengesComponent,
+      },
+      {
+        path: 'categories/:category/questions',
+        component: QuestionPageComponent,
+        canActivate: [QuestionGuard],
+      },
+      {
+        path: 'categories/:category/challenges/:id',
+        component: ChallengesDetailComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardPageComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

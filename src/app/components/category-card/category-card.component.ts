@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Challenges } from 'src/app/models/challenges.model';
+import { Statistics } from 'src/app/models/statistics';
+import { ChallengesService } from 'src/app/services/challenges.service';
 
 @Component({
   selector: 'app-category-card',
@@ -13,12 +16,14 @@ export class CategoryCardComponent implements OnInit {
   @Input() active = false;
   @Input() icon = "";
   @Input() imageSrc = "";
+  statistics: Statistics;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private challengesService: ChallengesService) {
 
   }
 
   ngOnInit(): void {
+    this.statistics = this.challengesService.getStatistics(this.name.toLowerCase());
   }
 
   submit(){

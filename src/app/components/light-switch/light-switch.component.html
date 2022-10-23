@@ -1,24 +1,26 @@
 <div class="container">
-  <div class="text-container h-1/4">
+  <div class="text-container">
     <p>Willst du nicht Strom sparen?</p>
     <p>Schalte doch das Licht aus!</p>
   </div>
-  <div class="bulb-container h-1/4">
+  <div class="bulb-container">
     <div class="glow"></div>
     <img
       *ngIf="!isDarkThemeEnabled"
       class="bulb"
       src="../../../assets/icons/bulb_on.png"
       alt="light bulb"
+      min-height="200px"
     />
     <img
       *ngIf="isDarkThemeEnabled"
       class="bulb"
       src="../../../assets/icons/bulb_off.png"
       alt="light bulb"
+      min-height="200px"
     />
   </div>
-  <div class="toggle-container h-1/4">
+  <div class="toggle-container">
     <input type="checkbox" class="toggle toggle-lg" (click)="switchTheme()" />
   </div>
   <div class="button-container">

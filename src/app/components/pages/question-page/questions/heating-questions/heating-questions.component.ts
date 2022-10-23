@@ -1,3 +1,4 @@
+import { StateService } from 'src/app/services/state.service';
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -19,7 +20,7 @@ export class HeatingQuestionsComponent {
     }
   )
 
-  constructor(private router: Router, private challengeService: ChallengesService) {}
+  constructor(private router: Router, private challengeService: ChallengesService, private stateService: StateService) {}
 
   onFormChange = (formControlName: string) => {
     document.getElementById(formControlName)?.scrollIntoView({
@@ -39,6 +40,7 @@ export class HeatingQuestionsComponent {
   onSubmit = () => {
     const values = this.heatingForm.value;
     // TODO inni: connect with challenges
+    this.stateService.setQuestionsSolved('heizen');
     this.router.navigate(['categories/heizen'])
   };
 
