@@ -12,6 +12,7 @@ import { CategoryOverviewComponent } from './components/category-overview/catego
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
+import { BottombarComponent } from './components/bottombar/bottombar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChallengesComponent } from './components/challenges/challenges.componen
     NavbarComponent,
     CategoryOverviewComponent,
     CategoryCardComponent,
+    BottombarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
