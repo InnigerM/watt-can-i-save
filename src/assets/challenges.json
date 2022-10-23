@@ -1,26 +1,38 @@
 [
   {
+    "id": 1,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
-    "potentialKwhSaved": 30
+    "category": "haushalt",
+    "potentialKwhSaved": 30,
+    "solved": true
   },
   {
+    "id": 2,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
-    "potentialKwhSaved": 30
+    "category": "haushalt",
+    "potentialKwhSaved": 30,
+    "solved": true
   },
   {
+    "id": 3,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
-    "potentialKwhSaved": 30
+    "category": "test",
+    "potentialKwhSaved": 30,
+    "solved": false
   },
   {
+    "id": 4,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
-    "potentialKwhSaved": 30
+    "category": "haushalt",
+    "potentialKwhSaved": 30,
+    "solved": true
   }
 ]

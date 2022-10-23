@@ -4,18 +4,25 @@
     <span class="text-xl">CHF 48.00</span>
   </div>
   <div class="flex flex-col md:flex-row gap-4">
-    <div class="p-4 bg-neutral flex flex-col rounded-lg relative" *ngFor="let challenge of challenges">
+    <div
+      *ngFor="let challenge of challenges"
+      class="p-4 bg-neutral flex flex-col rounded-lg relative"
+      (click)="solveChallenge(challenge)">
       <div class="flex-1">
         <p class="text-3xl">{{challenge.title}}</p>
         <span class="text-lg font-thin">{{challenge.description}}</span>
         <div class="mt-4 flex flex-row justify-between items-baseline w-full">
           <span class="text-lg font-thin">Sparpotential:</span>
-          <span class="text-lg text-primary">CHF
+          <span class="text-lg text-primary">
+            CHF
             <span class="font-bold text-2xl">{{getSaving(challenge.potentialKwhSaved)}}</span>
-            / Jahr</span>
+            / Jahr
+          </span>
         </div>
       </div>
-      <span class="material-symbols-outlined text-success absolute right-4">
+      <span
+        *ngIf="challenge.solved"
+        class="material-symbols-outlined text-success absolute right-4">
         verified
       </span>
     </div>
