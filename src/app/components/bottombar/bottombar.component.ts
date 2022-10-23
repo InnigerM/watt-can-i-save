@@ -13,6 +13,7 @@ export class BottombarComponent implements OnInit {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         if (
+          val.url === '/light-switch' ||
           val.url === '/rooms' ||
           val.url === '/' ||
           /categories\/\w{4,10}\/challenges\/\d{1,3}/.test(val.url)
