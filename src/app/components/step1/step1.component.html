@@ -1,24 +1,19 @@
-
-<div class="form-control w-full max-w-xs">
-  <label class="label">
-    <span class="label-text">Wo wohnst du?</span>
-  </label>
-  <input type="text" placeholder="Dein Ort" class="input input-bordered w-full max-w-xs" [(ngModel)]="city" (keyup)="searchElectricityPrices($event)"/>
-</div>
-
-<div class="cities">
-
-  <div *ngFor="let electricityPrice of electricityPrices$ | async" class="city bg-neutral" (click)="selectPrice(electricityPrice)">
-    <label class="label cursor-pointer electricity-price">
-      <input type="radio" name="radio-2" class="radio radio-primary" />
-      <div class="text">
-        <h2 >{{ electricityPrice.municipalityLabel }}</h2>
-        <span class="label-text">{{ electricityPrice.operatorLabel }}</span>
-      </div>
-    </label>
+<div class="container">
+  <h2>Wo wohnst du?</h2>
+  <div class="form-control w-full max-w-xs">
+    <input type="text" placeholder="Dein Ort" class="input input-bordered w-full max-w-xs" [(ngModel)]="city" (keyup)="searchElectricityPrices($event)"/>
   </div>
 
+  <div class="cities">
+    <div *ngFor="let electricityPrice of electricityPrices$ | async" [ngClass]="{'city': true, 'bg-neutral': !comparePrices(electricityPrice, selectedPrice), 'bg-primary': comparePrices(electricityPrice, selectedPrice), 'text-neutral': comparePrices(electricityPrice, selectedPrice)}" (click)="selectPrice(electricityPrice)">
+      <label class="label cursor-pointer electricity-price">
+        <div class="text p-2">
+          <h3 >{{ electricityPrice.municipalityLabel }}</h3>
+          <p>{{ electricityPrice.operatorLabel }}</p>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <button class="btn btn-active w-full max-w-xs" *ngIf="selectedPrice" (click)="savePrice()">Weiter</button>
 </div>
-
-<button class="btn btn-primary" *ngIf="selectedPrice" (click)="savePrice()">Weiter</button>
-
