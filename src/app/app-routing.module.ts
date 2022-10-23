@@ -3,31 +3,38 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import {DashboardPageComponent} from "./components/pages/dashboard-page/dashboard-page.component";
 import {QuestionPageComponent} from "./components/pages/question-page/question-page.component";
+import { ChallengesComponent } from './components/challenges/challenges.component';
+import { StepTwoComponent } from './components/step-two/step-two.component';
+import { Step1Component } from './components/step1/step1.component';
+import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
+import { ChallengesDetailComponent } from './components/challenges/challenges-detail/challenges-detail.component';
 
 const routes: Routes = [
   {
     // Initial questions path
     path: '',
-    component: AppComponent,
+    component: Step1Component,
+    pathMatch: 'full',
   },
   {
-    // TODO: insert categories screen here
+    path: 'rooms',
+    component: StepTwoComponent,
+  },
+  {
     path: 'categories',
-    component: AppComponent,
+    component: CategoryOverviewComponent,
   },
   {
-    // TODO: insert challenges overview screen here
     path: 'categories/:category',
-    component: AppComponent,
+    component: ChallengesComponent,
   },
   {
     path: 'categories/:category/questions',
     component: QuestionPageComponent,
   },
   {
-    // TODO: insert challenges detail screen here
     path: 'categories/:category/challenges/:id',
-    component: AppComponent,
+    component: ChallengesDetailComponent,
   },
   {
     path: 'dashboard',
