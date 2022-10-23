@@ -19,7 +19,7 @@ export class CategoryOverviewComponent implements OnInit {
     {
       active: true,
       name: 'Haushalt',
-      description: 'Backofen vorheizen? Alles Rund um Fehler, die du im Haushalt vermeiden solltest.',
+      description: 'Backofen vorheizen? Fehler, die du im Haushalt vermeiden solltest.',
       icon: "cottage",
       backgroundImage: "/assets/img/household.jpg"
     },
