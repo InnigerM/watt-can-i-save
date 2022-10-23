@@ -11,6 +11,7 @@ import { QuestionGuard } from './guards/question.guard';
 import { InitalSetupComplete } from './guards/inital-setup.guard-complete';
 
 import { LightSwitchComponent } from './components/light-switch/light-switch.component';
+import { InitalSetupNotComplete } from './guards/inital-setup-not-completed.guard';
 
 const routes: Routes = [
   {
@@ -18,14 +19,17 @@ const routes: Routes = [
     path: '',
     component: Step1Component,
     pathMatch: 'full',
+    canActivate:[InitalSetupNotComplete],
   },
   {
     path: 'rooms',
     component: StepTwoComponent,
+    canActivate:[InitalSetupNotComplete],
   },
   {
     path: 'light-switch',
     component: LightSwitchComponent,
+    canActivate:[InitalSetupNotComplete],
   },
   {path: '', canActivate:[InitalSetupComplete], children: [
     {

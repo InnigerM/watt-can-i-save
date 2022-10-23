@@ -1,11 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Challenges } from '../models/challenges.model';
 import { State } from '../models/state.model';
-import { Statistics } from '../models/statistics';
-import { CHALLENGES_KEY, STATE_KEY } from '../utils';
-import { ElectricityPriceService } from './electricity-price.service';
+import { STATE_KEY } from '../utils';
 
 @Injectable({
   providedIn: 'root',
