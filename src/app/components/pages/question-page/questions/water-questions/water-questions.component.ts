@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import { StateService } from 'src/app/services/state.service';
 import {ChallengesService} from "../../../../../services/challenges.service";
 
 @Component({
@@ -30,7 +31,7 @@ export class WaterQuestionsComponent{
     }
   )
 
-  constructor(private router: Router, private challengeService: ChallengesService) {}
+  constructor(private router: Router, private challengeService: ChallengesService, private stateService: StateService) {}
 
   onFormChange = (formControlName: string) => {
     document.getElementById(formControlName)?.scrollIntoView({
@@ -59,7 +60,8 @@ export class WaterQuestionsComponent{
     this.challengeService.setChallengeSolved(2, !['kalt', 'lauwarm'].find(v => values.showerTemp === v));
     this.challengeService.setChallengeSolved(3, !values.hasEcoShowerHead);
     this.challengeService.setChallengeSolved(4, !values.coldWaterForHands);
-    this.router.navigate(['categories/water'])
+    this.stateService.setQuestionsSolved('warmwasser');
+    this.router.navigate(['categories/warmwasser']);
   };
 
 }
