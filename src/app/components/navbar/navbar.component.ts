@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   title: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private stateService: StateService) {}
 
   ngOnInit(): void {
     this.route.url.subscribe((segments) => {
@@ -18,7 +19,7 @@ export class NavbarComponent implements OnInit {
   }
 
   reset(){
-    console.log('reset');
+    this.stateService.resetState();
     this.router.navigate(['/']);
   }
 }
