@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChallengesService } from 'src/app/services/challenges.service';
 
 interface Category {
   active: boolean,

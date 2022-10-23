@@ -17,6 +17,7 @@
   margin: auto;
   width: 100%;
   .text-container {
+    padding-top: 50px;
     height: fit-content;
     p {
       margin: 10px;
@@ -66,7 +67,7 @@
   .button-container {
     width: 100%;
     height: fit-content;
-    padding: 150px 20%;
+    padding: 150px 20% 0;
     button {
       margin: auto;
       width: 100%;
