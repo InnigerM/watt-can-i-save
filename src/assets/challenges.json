@@ -6,7 +6,7 @@
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
     "category": "haushalt",
     "potentialKwhSaved": 30,
-    "solved": false
+    "solved": true
   },
   {
     "id": 2,
@@ -15,14 +15,14 @@
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
     "category": "haushalt",
     "potentialKwhSaved": 30,
-    "solved": false
+    "solved": true
   },
   {
     "id": 3,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
-    "category": "haushalt",
+    "category": "test",
     "potentialKwhSaved": 30,
     "solved": false
   },
@@ -33,6 +33,6 @@
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
     "category": "haushalt",
     "potentialKwhSaved": 30,
-    "solved": false
+    "solved": true
   }
 ]
