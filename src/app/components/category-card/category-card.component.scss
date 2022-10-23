@@ -1,0 +1,31 @@
+.haushalt{
+    background-image: url("/assets/img/household.jpg"); 
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.warmwasser{
+    background-image: url("/assets/img/water.jpg"); 
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.heizen{
+    background-image: url("/assets/img/heater.jpg"); 
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.elektronik{
+    background-image: url("/assets/img/electronics.jpg"); 
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
