@@ -25,10 +25,10 @@ export class ChallengesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.statistics = this.challengesService.getStatistics();
+    this.category = this.route.snapshot.paramMap.get('category') as string;
+    this.statistics = this.challengesService.getStatistics(this.category);
     this.priceKwh = this.electricityService.getPrice().value;
 
-    this.category = this.route.snapshot.paramMap.get('category') as string;
     this.challengesService
       .getChallengesByCategory(this.category)
       .subscribe((challenges) => {
