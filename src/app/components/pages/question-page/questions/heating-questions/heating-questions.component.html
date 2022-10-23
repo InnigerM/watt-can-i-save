@@ -1,1 +1,55 @@
-<p>heating-questions works!</p>
+<div class="mx-8">
+  <h1 class="text-2xl">Fragen zum Haushalt</h1>
+  <form [formGroup]="heatingForm" (ngSubmit)="onSubmit()">
+    <ul class="steps steps-vertical step-primary">
+      <li class="step step-primary">
+        <div class="mt-40 w-11/12">
+          <label id="showerTemp">Auf wie viel Grad heizt du deine Wohnung?</label>
+          <p class="text-3xl font-bold text-center my-4 text-accent">
+            <span class="text-accent">{{ roomTempNumber }}</span>
+            <span class="font-thin">°C</span>
+          </p>
+          <input type="range"
+                 min="15"
+                 max="30"
+                 (change)="setTempLabel($event)"
+                 (dragleave)="onFormChange('airing')"
+                 [value]="roomTempNumber"
+                 class="range" step="1"/>
+          <div class="w-full flex justify-between text-xs">
+            <span *ngFor="let temp of ['15', '20', '25', '30']; let i = index" class="w-1/4 text-left">
+              <span [class]="'label-margin-' + i">{{ temp }}</span>
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <button class="btn btn-sm btn-primary mt-4" type="button" (click)="patchTemp()">
+              ok
+            </button>
+          </div>
+        </div>
+      </li>
+      <li  [class]="heatingForm.controls['roomTemp'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control my-50-prozent">
+          <label id="airing" class="mt-8 text-left">Lüftest du mit dem Stosslüftverfahren?</label>
+          <div class="flex">
+            <label class="label cursor-pointer justify-start w-1/2">
+              <input (change)="onFormChange('submit-button')" formControlName="airing" type="radio"
+                     name="airing" class="radio radio-primary"
+                     checked [value]="true"/>
+              <span class="label-text ml-4">Ja</span>
+            </label>
+            <label class="label cursor-pointer justify-start w-1/2">
+              <input (change)="onFormChange('submit-button')" formControlName="airing" type="radio"
+                     name="airing" class="radio radio-primary"
+                     checked [value]="false"/>
+              <span class="label-text ml-4">Nein</span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="heatingForm.controls['airing'].value !== null ? 'step step-primary' : 'step'">
+        <button class="btn btn-primary my-48" type="submit" id="submit-button">Let's go</button>
+      </li>
+    </ul>
+  </form>
+</div>
