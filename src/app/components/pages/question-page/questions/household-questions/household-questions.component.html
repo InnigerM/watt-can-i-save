@@ -1,0 +1,93 @@
+<div class="mx-8">
+  <h1 class="text-2xl">Fragen zum Haushalt</h1>
+  <form [formGroup]="householdForm" (ngSubmit)="onSubmit()">
+    <ul class="steps steps-vertical">
+      <li class="step step-primary">
+        <div class="form-control my-50-prozent">
+          <label id="isPreheating" class="mt-8">Heizt du den Backofen vor?</label>
+          <div class="flex">
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('isCirculatingAirUsed')" formControlName="isPreheating" type="radio"
+                     name="isPreheating" class="radio radio-primary" checked
+                     [value]="true"/>
+              <span class="label-text ml-4">Ja</span>
+            </label>
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('isCirculatingAirUsed')" formControlName="isPreheating" type="radio"
+                     name="isPreheating" class="radio radio-primary" checked
+                     [value]="false"/>
+              <span class="label-text ml-4">Nein</span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li class="text-left"
+          [class]="householdForm.controls['isPreheating'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control mt-24">
+          <label id="isCirculatingAirUsed">Welche Funktion benutzt du mehrheitlich?</label>
+          <div>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('heatUntilEnd')" formControlName="isCirculatingAirUsed" type="radio"
+                     name="isCirculatingAirUsed" class="radio radio-primary"
+                     checked [value]="true"/>
+              <span class="label-text ml-4">Umluft</span>
+              <img alt="circ" class="h-6 ml-4" src="assets/icons/circulating-air.png"/>
+            </label>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('heatUntilEnd')" formControlName="isCirculatingAirUsed" type="radio"
+                     name="isCirculatingAirUsed" class="radio radio-primary"
+                     checked [value]="false"/>
+              <span class="label-text ml-4">Ober- und Unterhitze</span>
+              <img alt="twoside" class="h-6 ml-4" src="assets/icons/two-sided-heat.png"/>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="householdForm.controls['isCirculatingAirUsed'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control mt-16">
+          <p id="heatUntilEnd">Bleibt dein Backofen bis zum Schluss an?</p>
+          <div class="flex">
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('efficiencyClass')" formControlName="heatUntilEnd" type="radio"
+                     name="heatUntilEnd" class="radio radio-primary" checked
+                     [value]="true"/>
+              <span class="label-text ml-4">Ja</span>
+            </label>
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('efficiencyClass')" formControlName="heatUntilEnd" type="radio"
+                     name="heatUntilEnd" class="radio radio-primary" checked
+                     [value]="false"/>
+              <span class="label-text ml-4">Nein</span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="householdForm.controls['heatUntilEnd'].value !== null ? 'step step-primary' : 'step'">
+        <div class="mt-40">
+          <label id="efficiencyClass">Welche Effizienzklasse hat dein Backofen?</label>
+          <p class="text-3xl font-bold text-center my-4">{{ efficiencyLabel }}</p>
+          <input type="range"
+                 min="0"
+                 max="6"
+                 (change)="setEfficiencyLabel($event)"
+                 (dragleave)="onFormChange('submit-button')"
+                 [value]="efficiencyNumber"
+                 class="range" step="1"/>
+          <div class="w-full flex justify-between text-xs">
+            <span *ngFor="let efficiencyClass of efficiencyClasses" class="w-1-7">
+              <span [class]="'label-margin-' + efficiencyClass.value">{{ efficiencyClass.label }}</span>
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <button class="btn btn-sm btn-primary mt-4" type="button" (click)="patchEfficiencyClass()">
+              ok
+            </button>
+          </div>
+        </div>
+      </li>
+      <li [class]="householdForm.controls['efficiencyClass'].value !== '' ? 'step step-primary' : 'step'">
+        <button class="btn btn-primary my-48" type="submit" id="submit-button">Let's go</button>
+      </li>
+    </ul>
+  </form>
+</div>

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CategoryCardComponent implements OnInit {
 
-  @Input() name = ""; 
+  @Input() name = "";
   @Input() description = "";
   @Input() active = false;
   @Input() icon = "";
@@ -22,7 +22,7 @@ export class CategoryCardComponent implements OnInit {
   }
 
   submit(){
-    this.router.navigate(['categories', this.name.toLowerCase()]);
+    this.router.navigate(['categories', this.name.toLowerCase(), 'questions']);
   }
 
 }
