@@ -13,7 +13,7 @@ export class StepTwoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(){
-    this.router.navigate(['categories']);
+  submit() {
+    this.router.navigate(['light-switch']);
   }
 }
