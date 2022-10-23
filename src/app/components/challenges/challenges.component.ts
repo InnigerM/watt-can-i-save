@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Challenges } from 'src/app/models/challenges.model';
+import { Statistics } from 'src/app/models/statistics';
 import { ChallengesService } from 'src/app/services/challenges.service';
 import { ElectricityPriceService } from 'src/app/services/electricity-price.service';
 
@@ -11,6 +12,7 @@ import { ElectricityPriceService } from 'src/app/services/electricity-price.serv
 })
 export class ChallengesComponent implements OnInit {
   challenges: Challenges[] = [];
+  statistics: Statistics;
   priceKwh: number;
 
   private category: string = '';
@@ -23,6 +25,7 @@ export class ChallengesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.statistics = this.challengesService.getStatistics();
     this.priceKwh = this.electricityService.getPrice().value;
 
     this.category = this.route.snapshot.paramMap.get('category') as string;

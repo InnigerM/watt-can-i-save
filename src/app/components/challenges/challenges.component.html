@@ -1,7 +1,7 @@
 <div class="mx-4">
   <div class="flex flex-row justify-between mb-4">
-    <span class="text-xl">1/6</span>
-    <span class="text-xl">CHF 48.00</span>
+    <span class="text-xl">{{statistics.challengesSolved}} / {{challenges.length}}</span>
+    <span class="text-xl">CHF {{statistics.savings | number : '1.2-2'}}</span>
   </div>
   <div class="flex flex-col md:flex-row gap-4">
     <div
