@@ -1,0 +1,28 @@
+<div class="mx-4">
+  <div class="flex flex-row gap-4 items-center">
+    <button class="btn btn-icon" (click)="goBack()">
+      <span class="material-symbols-outlined">
+        arrow_back
+      </span>
+    </button>
+    <h1 class="text-3xl">{{challenge.title}}</h1>
+  </div>
+  <p class="mt-6 mb-4 text-xl font-thin">{{challenge.description}}</p>
+  <p class="font-light">{{challenge.longText}}</p>
+</div>
+
+<div class="absolute bottom-2 w-full px-4 border-t border-neutral">
+  <div class="p-4 w-full rounded-lg">
+    <div class="flex flex-row justify-between items-baseline w-full">
+      <span class="text-lg font-thin">Sparpotential:</span>
+      <span class="text-lg text-primary">
+        CHF
+        <span class="font-bold text-2xl">{{getSaving(challenge.potentialKwhSaved)}}</span>
+        / Jahr
+      </span>
+    </div>
+    <button
+      class="mt-6 btn btn-primary w-full"
+      (click)="solveChallenge()">{{btnText}}</button>
+  </div>
+</div>

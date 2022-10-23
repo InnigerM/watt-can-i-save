@@ -37,6 +37,14 @@ export class ChallengesService {
     );
   }
 
+  getChallengeById(id: number): Observable<Challenges> {
+    return this.challenges.pipe(
+      map(
+        (challenges) => challenges.filter((challenge) => challenge.id === id)[0]
+      )
+    );
+  }
+
   setChallengeSolved(id: number, status: boolean): void {
     this.challenges.value
       .filter((challenge) => challenge.id === id)

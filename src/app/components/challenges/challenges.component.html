@@ -1,13 +1,13 @@
 <div class="mx-4">
   <div class="flex flex-row justify-between mb-4">
-    <span class="text-xl">1/6</span>
-    <span class="text-xl">CHF 48.00</span>
+    <span class="text-xl">{{statistics.challengesSolved}} / {{challenges.length}}</span>
+    <span class="text-xl">CHF {{statistics.savings | number : '1.2-2'}}</span>
   </div>
   <div class="flex flex-col md:flex-row gap-4">
     <div
       *ngFor="let challenge of challenges"
       class="p-4 bg-neutral flex flex-col rounded-lg relative"
-      (click)="solveChallenge(challenge)">
+      (click)="navigateToDetail(challenge.id)">
       <div class="flex-1">
         <p class="text-3xl">{{challenge.title}}</p>
         <span class="text-lg font-thin">{{challenge.description}}</span>

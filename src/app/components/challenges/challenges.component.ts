@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Challenges } from 'src/app/models/challenges.model';
+import { Statistics } from 'src/app/models/statistics';
 import { ChallengesService } from 'src/app/services/challenges.service';
 import { ElectricityPriceService } from 'src/app/services/electricity-price.service';
 
@@ -11,6 +12,7 @@ import { ElectricityPriceService } from 'src/app/services/electricity-price.serv
 })
 export class ChallengesComponent implements OnInit {
   challenges: Challenges[] = [];
+  statistics: Statistics;
   priceKwh: number;
 
   private category: string = '';
@@ -18,10 +20,12 @@ export class ChallengesComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private challengesService: ChallengesService,
-    private electricityService: ElectricityPriceService
+    private electricityService: ElectricityPriceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.statistics = this.challengesService.getStatistics();
     this.priceKwh = this.electricityService.getPrice().value;
 
     this.category = this.route.snapshot.paramMap.get('category') as string;
@@ -33,11 +37,11 @@ export class ChallengesComponent implements OnInit {
   }
 
   getSaving(potentialSaving: number): string {
-    const result = potentialSaving * this.priceKwh / 100;
+    const result = (potentialSaving * this.priceKwh) / 100;
     return result.toFixed(2);
   }
 
-  solveChallenge(challenge: Challenges): void {
-    this.challengesService.setChallengeSolved(challenge.id, !challenge.solved);
+  navigateToDetail(id: number): void {
+    this.router.navigate(['categories', this.category, 'challenges', id]);
   }
 }
