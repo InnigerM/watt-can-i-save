@@ -115,5 +115,14 @@
     "category": "heizen",
     "potentialKwhSaved": 200,
     "solved": false
+  },
+  {
+    "id": 14,
+    "title": "Standby Challenge",
+    "description": "Durch Steckerleisten",
+    "longText": "Elektrogeräte nicht im „stand-by“ Modus laufen lassen, sondern ganz ausschalten",
+    "category": "elektronik",
+    "potentialKwhSaved": 210,
+    "solved": false
   }
 ]

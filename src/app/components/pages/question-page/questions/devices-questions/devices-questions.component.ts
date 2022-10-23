@@ -28,7 +28,8 @@ export class DevicesQuestionsComponent {
 
   onSubmit() {
     const values = this.devicesForm.value;
-    // TODO: Yves
+    this.challengeService.setChallengeSolved(14, !values.standByMode);
+    this.challengeService.setChallengeSolved(6, !values.hairDryer);
 
     this.stateService.setQuestionsSolved('elektronik');
     this.router.navigate(['categories/elektronik'])
