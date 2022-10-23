@@ -12,6 +12,7 @@ import { ElectricityPriceService } from 'src/app/services/electricity-price.serv
 export class ChallengesDetailComponent implements OnInit {
   challenge: Challenges;
   btnText: string = 'Challenge abschliessen';
+  solved: boolean = false;
 
   private id: number;
   private priceKwh: number;
@@ -42,7 +43,14 @@ export class ChallengesDetailComponent implements OnInit {
 
   solveChallenge(): void {
     this.challengesService.setChallengeSolved(this.id, !this.challenge.solved);
-    this.goBack();
+    this.solved = this.challenge.solved;
+    if (this.solved) {
+      setTimeout(() => {
+        this.goBack();
+      }, 3000);
+    } else {
+      this.goBack();
+    }
   }
 
   goBack(): void {

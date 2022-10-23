@@ -10,6 +10,7 @@ import { ChallengesDetailComponent } from './components/challenges/challenges-de
 import { QuestionGuard } from './guards/question.guard';
 import { InitalSetupComplete } from './guards/inital-setup.guard-complete';
 
+import { LightSwitchComponent } from './components/light-switch/light-switch.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'rooms',
     component: StepTwoComponent,
+  },
+  {
+    path: 'light-switch',
+    component: LightSwitchComponent,
   },
   {path: '', canActivate:[InitalSetupComplete], children: [
     {
