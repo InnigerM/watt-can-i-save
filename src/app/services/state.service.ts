@@ -24,8 +24,6 @@ export class StateService {
       this.saveToLocalStorage();
     } else {
       this.state = JSON.parse(localStorage.getItem(STATE_KEY));
-      this.state.initalSetupCompleted = true;
-      this.state.questionAnswered["haushalt"]=true;
     }
   }
 
