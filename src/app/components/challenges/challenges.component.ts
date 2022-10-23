@@ -32,7 +32,10 @@ export class ChallengesComponent implements OnInit {
     this.challengesService
       .getChallengesByCategory(this.category)
       .subscribe((challenges) => {
-        this.challenges = challenges;
+        this.challenges = challenges.sort(
+          (challengeA, challengeB) =>
+            Number(challengeA.solved) - Number(challengeB.solved)
+        );
       });
   }
 
