@@ -20,8 +20,10 @@ export class LightSwitchComponent implements OnInit {
 
     if (this.isDarkThemeEnabled) {
       html.dataset['theme'] = 'light';
+      glow.style.opacity = '1';
     } else {
       html.dataset['theme'] = 'night';
+      glow.style.opacity = '0';
     }
 
     this.isDarkThemeEnabled = !this.isDarkThemeEnabled;
