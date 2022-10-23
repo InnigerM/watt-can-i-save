@@ -5,3 +5,10 @@ $keys: 0, 1, 2, 3;
     margin-left: calc(#{$k} * 25%);
   }
 }
+.my-50-prozent {
+  margin: 35vh 0;
+}
+
+.steps .step {
+  text-align: left;
+}
