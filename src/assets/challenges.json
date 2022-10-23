@@ -5,7 +5,7 @@
     "description": "Umluft statt Ober- und Unterhitze",
     "longText": "In vielen Rezepten steht, ob du mit Umluft oder mit Ober- und Unterhitze backen sollst. Doch auf jeder Pizzapackung stehen beide Angaben. Beides funktioniert auch gut, doch bei Umluft liegt die Temperatur meist 20 Grad darunter. Entsprechend sparst du Energie.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 42,
     "solved": false
   },
   {
@@ -14,7 +14,7 @@
     "description": "Nicht vorheizen",
     "longText": "Wenn im Rezept steht, 40 Minuten bei 160 Grad, dann benötigt der Kuchen durchaus diese Hitze für die gesamte Zeit. Daran kannst du nichts ändern. Mit dem Vorheizen läuft der Backofen allerdings länger als 40 Minuten. Verkürzen kannst du jedoch die Gesamtzeit. Dadurch sparst du Energie. Die 160 Grad müssen noch nicht erreicht sein, wenn du den Kuchen in den Ofen schiebst. Schließlich hat der Kuchen dann noch Zimmertemperatur und braucht seinerseits Zeit, um auf die hohe Temperatur zu kommen. Du kannst den Kuchen also schon bei 100 oder 120 Grad in den Ofen geben.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 36,
     "solved": false
   },
   {
@@ -23,7 +23,7 @@
     "description": "Früher ausstellen",
     "longText": "Die Laufzeit des Backofens zu verkürzen, ist ebenfalls ein guter Tipp für das Ende des Backvorgangs. Du schaltest dann das Gerät vorzeitig ab und nutzt noch die Restwärme. Wenn du den Ofen 10 Minuten vor der angegebenen Backzeit ausstellst, verliert er nur wenig an Temperatur. Auch wenn es dann zum Ende effektiv 10–20 Grad weniger sein sollten: meist reicht es aus, dass die Speise genauso gelingt wie gewünscht. Bei einem Soufflé solltest du das allerdings tunlichst vermeiden. Auch hier gilt: ausprobieren und in Rezepteforen lesen oder nachfragen. Beim Brötchenbacken ist es sogar Teil vieler Rezepte, zum Ende hin die Temperatur zu senken und die Ofentür ein wenig zu öffnen, um Dampf entweichen zu lassen.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 22,
     "solved": false
   },
   {
@@ -32,7 +32,7 @@
     "description": "Alternativen nutzen",
     "longText": "Für kleine Mengen lohnt es sich nicht immer, den großen Backofen anzustellen. Um lediglich ein, zwei Brötchen aufzubacken, ist der Energieaufwand relativ groß. Das Gerät muss viel Luft auf einer konstant hohen Temperatur halten. Zudem geht verhältnismäßig viel Energie über die große Außenfläche verloren.Einige Kleingeräte in der Küche arbeiten energieeffizienter, da sie weniger Luft aufheizen müssen und über die kleinere Oberfläche weniger Energie verloren geht: eine Mikrowelle mit Grill- und Heißluftfunktion zum Beispiel oder ein Mini-Ofen, aber auch eine Heißluftfritteuse. Ein weitere Alternative ist der Toaster, der Brötchen in Nullkommanix wieder schön knackig macht.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 50,
     "solved": false
   },
   {
@@ -41,7 +41,7 @@
     "description": "Verzichte auf Full HD",
     "longText": "Während einer Stunde Video-Streaming in Full HD verbrauchst du zwischen 0,22 und 0,37 kWh Energie. Verzichte doch mal aufs Binge-Watching und schalte die Screens aus.",
     "category": "elektronik",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 37,
     "solved": false
   },
   {
@@ -49,8 +49,8 @@
     "title": "Föhn Challenge",
     "description": "Verzichte aufs tägliche Haare föhnen",
     "longText": "Wenn du täglich aufs Haare föhnen verzichtest, sparst du bis zu 20,- € im Jahr. Trockne sie stattdessen einfach an der Luft.",
-    "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "category": "elektronik",
+    "potentialKwhSaved": 20,
     "solved": false
   },
   {
@@ -59,7 +59,7 @@
     "description": "Energie sparen durch weniger heizen",
     "longText": "Durch das Senken der Raumtemperatur um ein Grad sparst du bereits ca. 6 % der Heizenergie. Also dreh die Heizung herunter und denk ans Stoßlüften.",
     "category": "heizen",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 40,
     "solved": false
   },
   {
@@ -68,7 +68,7 @@
     "description": "Spare Zeit und Energie mit einem Wasserkocher",
     "longText": "Wasser erhitzt du schneller und effizienter mit dem Wasserkocher statt auf dem Elektroherd. Achte dabei auf die Füllmenge und koche nur so viel Wasser wie nötig.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 25,
     "solved": false
   },
   {
@@ -77,25 +77,34 @@
     "description": "Energie sparen durch 1 °C",
     "longText": "Stellen Sie die Temperatur im Kühlschrank richtig ein: 7 °C im oberen Fach reichen vollkommen aus. Wenn Sie die Temperatur um nur 1 °C niedriger stellen, steigt Ihr Stromverbrauch bereits um etwa 6 %.",
     "category": "haushalt",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 28,
     "solved": false
   },
   {
     "id": 10,
     "title": "Warmwasser Challenge",
-    "description": "Sinnvoll Wasser sparen im Alltag",
-    "longText": "Jeden Morgen kalt duschen muss nicht sein. Schon einfache Tipps zum Wassersparen haben eine große Wirkung und machen sich schnell bezahlt – ohne Komfortverlust. Wer beispielsweise eine Minute kürzer und bei einem Grad weniger duscht, kann einiges an Wasser und Geld sparen. Noch mehr Ersparnis ist möglich, wenn hier und da Kleinigkeiten geändert werden, zum Beispiel: häufiger duschen statt baden, beim Händewaschen und Einseifen zwischendurch den Wasserhahn schließen und/oder kaltes Wasser nutzen, einen Zahnputzbecher verwenden, den Geschirrspüler oder die Waschmaschine im Ökoprogramm laufen lassen. Um im Alltag Wasser sparen zu können, ist das Bewusstsein für den sorgsamen Umgang mit der Ressource eine wichtige Voraussetzung. Erfahren Sie allen zum Thema Wasserverbrauch im Haushalt.",
+    "description": "Wassertemperatur optimal regeln",
+    "longText": "Jeden Morgen kalt duschen muss nicht sein. Schon einfache Tipps zum Wassersparen haben eine große Wirkung und machen sich schnell bezahlt – ohne Komfortverlust. Wer beispielsweise eine Minute kürzer und bei einem Grad weniger duscht, kann einiges an Wasser und Geld sparen.",
     "category": "warmwasser",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 22,
     "solved": false
   },
   {
     "id": 11,
     "title": "Warmwasser Challenge",
-    "description": "Wassertemperatur optimal regeln",
-    "longText": "Die Wassertemperatur muss in einer zentralen Heizanlage nicht mehr als 60 Grad Celsius betragen – aber auch nicht weniger, da dies die Mindesttemperatur für den Schutz vor Legionellen ist. Bei dezen­tralen Lösungen wie Durch­lauf­erhitzern genügen niedrigere Temperaturen, da das Wasser hier nicht länger auf dieser Temperatur gehalten wird und so keine Gefahr durch Legionellen besteht: An der Küchen­spüle reichen etwa 45 Grad, zum Duschen ungefähr 38 Grad. Moderne voll­elektro­nische Durch­lauf­erhitzer lassen sich grad­genau regeln, sodass sofort Warm­wasser mit der gewünschten Temperatur zur Ver­fügung steht und kein Wasser ver­schwendet wird.",
+    "description": "Sinnvoll Wasser sparen im Alltag",
+    "longText": "Häufiger duschen statt baden, beim Händewaschen und Einseifen zwischendurch den Wasserhahn schließen und/oder kaltes Wasser nutzen, einen Zahnputzbecher verwenden.",
     "category": "warmwasser",
-    "potentialKwhSaved": 30,
+    "potentialKwhSaved": 24,
+    "solved": false
+  },
+  {
+    "id": 12,
+    "title": "Warmwasser Challenge",
+    "description": "Sinnvoll Wasser sparen im Alltag",
+    "longText": "Den Geschirrspüler oder die Waschmaschine im Ökoprogramm laufen lassen. Um im Alltag Wasser sparen zu können, ist das Bewusstsein für den sorgsamen Umgang mit der Ressource eine wichtige Voraussetzung.",
+    "category": "warmwasser",
+    "potentialKwhSaved": 18,
     "solved": false
   }
 ]
