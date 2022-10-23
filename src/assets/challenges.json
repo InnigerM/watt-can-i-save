@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
@@ -8,6 +9,7 @@
     "solved": false
   },
   {
+    "id": 2,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
@@ -16,6 +18,7 @@
     "solved": false
   },
   {
+    "id": 3,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
@@ -24,6 +27,7 @@
     "solved": false
   },
   {
+    "id": 4,
     "title": "Challenge",
     "description": "Energie sparen ist so einfach",
     "longText": "Erzähl mal was über Energie sparen hier, das ziemlich sehr lange ist und auch Sinn macht.",
