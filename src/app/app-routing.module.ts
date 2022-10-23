@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import {DashboardPageComponent} from "./components/pages/dashboard-page/dashboard-page.component";
+import {QuestionPageComponent} from "./components/pages/question-page/question-page.component";
 
 const routes: Routes = [
   {
@@ -20,9 +21,8 @@ const routes: Routes = [
     component: AppComponent,
   },
   {
-    // TODO: insert challenge questions screen here
-    path: 'categories/:category/challenges/questions/:id',
-    component: AppComponent,
+    path: 'categories/:category/questions',
+    component: QuestionPageComponent,
   },
   {
     // TODO: insert challenges detail screen here
