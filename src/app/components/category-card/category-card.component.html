@@ -9,7 +9,9 @@
         <span class="material-symbols-outlined text-5xl text-primary">
           {{icon}}
         </span>
-        {{statistics.challengesSolved}}
+        <div class="badge badge-primary badge-outline">{{statistics.challengesSolved}}/{{statistics.totalChallenges}} </div>
+        
+        <div class="badge badge-primary badge-outline">{{ statistics.savings | number : '1.2-2'}}/{{ statistics.totalAmount | number : '1.2-2'}}</div>
       </div> 
       
       <div class="card-actions justify-end">
