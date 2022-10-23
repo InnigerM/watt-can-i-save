@@ -1,1 +1,56 @@
-<p>devices-questions works!</p>
+<div class="mx-8">
+  <h1 class="text-2xl">Fragen zu elektronischen Geräten</h1>
+  <form [formGroup]="devicesForm" (ngSubmit)="onSubmit()">
+    <ul class="steps steps-vertical">
+      <li class="step step-primary">
+        <div class="form-control my-50-prozent">
+          <label id="hairDryer" class="mt-8">Föhnst du deine Haare?</label>
+          <div class="flex">
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('standByMode')" formControlName="hairDryer" type="radio"
+                     name="hairDryer" class="radio radio-primary" checked
+                     [value]="true"/>
+              <span class="label-text ml-4">Ja</span>
+            </label>
+            <label class="label cursor-pointer w-1/2 justify-start">
+              <input (change)="onFormChange('standByMode')" formControlName="hairDryer" type="radio"
+                     name="hairDryer" class="radio radio-primary" checked
+                     [value]="false"/>
+              <span class="label-text ml-4">Nein</span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li class="text-left"
+          [class]="devicesForm.controls['hairDryer'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control mt-48">
+          <label id="standByMode" class="text-left">Schaltest du deine elektronischen Geräte nach dem Gebrauch aus oder in den StandBy Modus?</label>
+          <div>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('submit-button')" formControlName="standByMode" type="radio"
+                     name="standByMode" class="radio radio-primary"
+                     checked [value]="true"/>
+              <span class="label-text ml-4">StandBy Modus</span>
+              <span class="material-symbols-outlined text-secondary ml-4">
+                do_not_disturb_on
+              </span>
+            </label>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('submit-button')" formControlName="standByMode" type="radio"
+                     name="standByMode" class="radio radio-primary"
+                     checked [value]="false"/>
+              <span class="label-text ml-4">Ausschalten</span>
+              <span class="material-symbols-outlined text-secondary ml-4">
+                power_settings_new
+              </span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="devicesForm.controls['standByMode'].value !== null ? 'step step-primary' : 'step'">
+        <button class="btn btn-primary my-48" [disabled]="!devicesForm.valid" type="submit" id="submit-button">Let's go</button>
+      </li>
+    </ul>
+  </form>
+</div>
+
