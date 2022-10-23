@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 export class NavbarComponent implements OnInit {
   title: string = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router, private stateService: StateService) {}
 
   ngOnInit(): void {
     this.route.url.subscribe((segments) => {
       this.title = segments[segments.length - 1].path;
     });
+  }
+
+  reset(){
+    this.stateService.resetState();
+    this.router.navigate(['/']);
   }
 }

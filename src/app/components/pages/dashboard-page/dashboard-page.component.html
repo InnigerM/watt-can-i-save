@@ -1,42 +1,60 @@
 <h1 class="text-center text-5xl font-bold mt-8">Deine Übersicht</h1>
 <div class="flex justify-center mt-4">
-  <div class="stats shadow stats-vertical w-full sm:stats-horizontal">
+  <div class="stats stats-vertical w-full sm:stats-horizontal">
     <div class="stat">
       <div class="stat-figure text-secondary">
-      <span class="material-symbols-outlined">
-        military_tech
-      </span>
-      </div>
-      <div class="stat-title">Level</div>
-      <div class="stat-value">{{ level }}</div>
-      <div class="stat-desc">{{ points }} Punkte</div>
-    </div>
-    <div class="stat">
-      <div class="stat-figure text-secondary">
-      <span class="material-symbols-outlined">
-        savings
-      </span>
+        <span class="material-symbols-outlined">
+          savings
+        </span>
       </div>
       <div class="stat-title">Geld gespart</div>
-      <div class="stat-value">CHF {{ statistics.savings | number : '1.2-2'}}</div>
+      <div class="stat-value">
+        <span class="font-thin">CHF </span>
+        <span class="text-accent">{{ statistics.savings | number : '1.2-2'}}</span>
+      </div>
       <div class="stat-desc">pro Jahr</div>
     </div>
     <div class="stat">
       <div class="stat-figure text-secondary">
-      <span class="material-symbols-outlined">
-        verified
-      </span>
+        <span class="material-symbols-outlined">
+          electric_bolt
+        </span>
+      </div>
+      <div class="stat-title">Eingesparte Energie</div>
+      <div class="stat-value">
+        <span class="text-accent">{{ statistics.kwhSaving }} </span>
+        <span class="font-thin">kWh</span>
+      </div>
+      <div class="stat-desc">pro Jahr</div>
+    </div>
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <span class="material-symbols-outlined">
+          verified
+        </span>
       </div>
       <div class="stat-title">Abgeschlossene Challenges</div>
-      <div class="stat-value">{{ statistics.challengesSolved }}</div>
-      <button class="btn btn-xs btn-primary w-fit mt-2">Neue Challenge</button>
+      <div class="stat-value text-accent">{{ statistics.challengesSolved }}</div>
+      <div class="stat-desc">von {{statistics.totalChallenges}}</div>
     </div>
   </div>
 </div>
-<div class="flex flex-col items-center justify-center mt-8">
-  <div class="radial-progress text-primary text-center"  [ngStyle]="{'--value': percentageSaved, '--size': '12rem'}">
+
+
+<div class="flex flex-col items-center justify-center mt-6">
+  <div class="radial-progress text-primary text-center" [ngStyle]="{'--value': percentageSaved, '--size': '12rem'}">
     <div class="stat-value">{{ percentageSaved | number: '1.0-0'}}% </div>
     <div class="stat-desc opacity-60 text-white">gespart</div>
   </div>
-  <h3 class="text-center text-2xl font-bold mt-8">CHF {{ statistics.savings | number : '1.2-2'}} von möglichen CHF {{ statistics.totalAmount | number : '1.2-2'}} gespart</h3>
+  <h4 class="text-center text-2xl font-thin mt-8">
+    CHF
+    <span class="text-accent font-bold">
+      {{ statistics.savings | number : '1.2-2'}}
+    </span>
+    von möglichen CHF
+    <span class="text-accent font-bold">
+      {{ statistics.totalAmount | number : '1.2-2'}}
+    </span>
+    gespart
+  </h4>
 </div>

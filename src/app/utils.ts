@@ -1,2 +1,3 @@
 export const ELECTRICITY_PRICE_KEY = "ELECTRICITY_PRICE";
 export const CHALLENGES_KEY = "CHALLENGES";
+export const STATE_KEY = "STATE";
