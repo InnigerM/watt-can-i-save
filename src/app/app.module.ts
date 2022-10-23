@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
 import { ChallengesDetailComponent } from './components/challenges/challenges-detail/challenges-detail.component';
 import { BottombarComponent } from './components/bottombar/bottombar.component';
+import { FireworkComponent } from './components/shared/firework/firework.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BottombarComponent } from './components/bottombar/bottombar.component';
     CategoryCardComponent,
     ChallengesDetailComponent,
     BottombarComponent,
+    FireworkComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
