@@ -5,10 +5,10 @@
   </div>
 
   <div class="cities">
-    <div *ngFor="let electricityPrice of electricityPrices$ | async" [ngClass]="{'city': true, 'bg-neutral': !comparePrices(electricityPrice, selectedPrice), 'bg-primary': comparePrices(electricityPrice, selectedPrice), 'text-neutral': comparePrices(electricityPrice, selectedPrice)}" (click)="selectPrice(electricityPrice)">
+    <div *ngFor="let electricityPrice of electricityPrices$ | async" [ngClass]="{'city': true, 'bg-neutral': !comparePrices(electricityPrice, selectedPrice), 'bg-primary': comparePrices(electricityPrice, selectedPrice), 'text-primary-content': true}" (click)="selectPrice(electricityPrice)">
       <label class="label cursor-pointer electricity-price">
         <div class="text p-2">
-          <h3 >{{ electricityPrice.municipalityLabel }}</h3>
+          <p><b>{{ electricityPrice.municipalityLabel }}</b></p>
           <p>{{ electricityPrice.operatorLabel }}</p>
         </div>
       </label>
