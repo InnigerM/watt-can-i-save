@@ -1,6 +1,8 @@
 export interface Statistics {
-  challengesSolved: number ;
+  totalChallenges: number;
+  challengesSolved: number;
   potentialSavings: number;
   savings: number;
+  kwhSaving: number;
   totalAmount: number;
 }

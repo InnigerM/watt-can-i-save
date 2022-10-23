@@ -15,7 +15,10 @@ export class ChallengesService {
     Challenges[]
   >([]);
 
-  constructor(private httpClient: HttpClient, private electricityPriceService: ElectricityPriceService) {
+  constructor(
+    private httpClient: HttpClient,
+    private electricityPriceService: ElectricityPriceService
+  ) {
     // Load empty challenges from assets if localstorage is empty
     if (localStorage.getItem(CHALLENGES_KEY) === null) {
       this.httpClient
@@ -56,27 +59,36 @@ export class ChallengesService {
     const price = this.electricityPriceService.getPrice().value;
 
     const statistics: Statistics = {
+      totalChallenges: 0,
       challengesSolved: 0,
       potentialSavings: 0,
       savings: 0,
-      totalAmount: 0
-    }
+      kwhSaving: 0,
+      totalAmount: 0,
+    };
 
-    const challenges = category !== null ? this.challenges.value.filter(challenge => challenge.category === category) : this.challenges.value
+    const challenges =
+      category !== null
+        ? this.challenges.value.filter(
+            (challenge) => challenge.category === category
+          )
+        : this.challenges.value;
 
-   challenges.forEach(challenge => {
+    statistics.totalChallenges = challenges.length;
+    challenges.forEach((challenge) => {
       if (challenge.solved) {
         statistics.challengesSolved += 1;
-        statistics.savings += (challenge.potentialKwhSaved * price) / 100
+        statistics.kwhSaving += challenge.potentialKwhSaved;
+        statistics.savings += (challenge.potentialKwhSaved * price) / 100;
       } else {
-        statistics.potentialSavings += (challenge.potentialKwhSaved * price) / 100;
+        statistics.potentialSavings +=
+          (challenge.potentialKwhSaved * price) / 100;
       }
     });
 
     statistics.totalAmount = statistics.potentialSavings + statistics.savings;
     return statistics;
   }
-
 
   private saveToLocalStorage() {
     localStorage.setItem(CHALLENGES_KEY, JSON.stringify(this.challenges.value));
