@@ -7,6 +7,7 @@ import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
 import { ChallengesDetailComponent } from './components/challenges/challenges-detail/challenges-detail.component';
+import { LightSwitchComponent } from './components/light-switch/light-switch.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'rooms',
     component: StepTwoComponent,
+  },
+  {
+    path: 'light-switch',
+    component: LightSwitchComponent,
   },
   {
     path: 'categories',
