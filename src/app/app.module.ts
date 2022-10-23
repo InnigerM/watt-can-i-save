@@ -17,6 +17,9 @@ import { BottombarComponent } from './components/bottombar/bottombar.component';
 import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
 import { HouseholdQuestionsComponent } from './components/pages/question-page/questions/household-questions/household-questions.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { WaterQuestionsComponent } from './components/pages/question-page/questions/water-questions/water-questions.component';
+import { HeatingQuestionsComponent } from './components/pages/question-page/questions/heating-questions/heating-questions.component';
+import { DevicesQuestionsComponent } from './components/pages/question-page/questions/devices-questions/devices-questions.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     BottombarComponent,
     NavbarComponent,
     QuestionPageComponent,
-    HouseholdQuestionsComponent
+    HouseholdQuestionsComponent,
+    WaterQuestionsComponent,
+    HeatingQuestionsComponent,
+    DevicesQuestionsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
