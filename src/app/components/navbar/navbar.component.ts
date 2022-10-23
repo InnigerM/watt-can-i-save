@@ -20,6 +20,8 @@ export class NavbarComponent implements OnInit {
 
   reset(){
     this.stateService.resetState();
+    const html = document.querySelector('html') as HTMLElement;
+    html.dataset['theme'] = 'light';
     this.router.navigate(['/']);
   }
 }
