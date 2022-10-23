@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./step-two.component.scss'],
 })
 export class StepTwoComponent implements OnInit {
+  selectedValue = '';
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
