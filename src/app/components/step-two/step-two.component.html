@@ -2,15 +2,16 @@
   <form action="">
     <h2>Wie wohnst du?</h2>
 
-    <select class="select select-bordered w-full max-w-xs">
-      <option disabled selected>Wähle deine Anzahl Zimmer</option>
-      <option>1½ Zimmer</option>
-      <option>2½ Zimmer</option>
-      <option>3½ Zimmer</option>
-      <option>4½ Zimmer</option>
-      <option>5½ Zimmer</option>
-      <option>Einfamilienhaus</option>
+    <select class="select select-bordered w-full max-w-xs" [(ngModel)]="selectedValue" name="roomSelect">
+      <option [ngValue]="''"disabled selected>Wähle deine Anzahl Zimmer</option>
+      <option [ngValue]="'1½ Zimmer'">1½ Zimmer</option>
+      <option [ngValue]="'2½ Zimmer'">2½ Zimmer</option>
+      <option [ngValue]="'3½ Zimmer'">3½ Zimmer</option>
+      <option [ngValue]="'4½ Zimmer'">4½ Zimmer</option>
+      <option [ngValue]="'5½ Zimmer'">5½ Zimmer</option>
+      <option [ngValue]="'Einfamilienhaus'">Einfamilienhaus</option>
     </select>
-    <button class="btn btn-active w-full max-w-xs" (click)="submit()">Weiter</button>
+
+    <button *ngIf="selectedValue !== ''" class="btn btn-wide btn-primary w-full max-w-xs" (click)="submit()">Weiter</button>
   </form>
 </div>
