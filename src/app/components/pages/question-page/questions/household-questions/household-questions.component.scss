@@ -1,0 +1,19 @@
+.w-1-7 {
+  width: 13%;
+}
+
+$keys: 0, 1, 2, 3, 4, 5, 6, 7;
+
+@each $k in $keys {
+  .label-margin-#{$k} {
+    margin-left: calc(#{$k} * 13%);
+  }
+}
+
+.steps .step {
+  text-align: left;
+}
+
+.my-50-prozent {
+  margin: 50vh 0;
+}

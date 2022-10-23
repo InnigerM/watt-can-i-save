@@ -15,6 +15,9 @@ import { ChallengesComponent } from './components/challenges/challenges.componen
 import { ChallengesDetailComponent } from './components/challenges/challenges-detail/challenges-detail.component';
 import { BottombarComponent } from './components/bottombar/bottombar.component';
 import { FireworkComponent } from './components/shared/firework/firework.component';
+import { QuestionPageComponent } from './components/pages/question-page/question-page.component';
+import { HouseholdQuestionsComponent } from './components/pages/question-page/questions/household-questions/household-questions.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,17 @@ import { FireworkComponent } from './components/shared/firework/firework.compone
     ChallengesDetailComponent,
     BottombarComponent,
     FireworkComponent,
+    NavbarComponent,
+    QuestionPageComponent,
+    HouseholdQuestionsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
