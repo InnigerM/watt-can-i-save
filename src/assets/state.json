@@ -1,0 +1,9 @@
+{
+  "initalSetupCompleted": true,
+  "questionAnswered": {
+    "haushalt": false,
+    "warmwasser": false,
+    "heizen": false,
+    "elektronik": false
+  }
+}

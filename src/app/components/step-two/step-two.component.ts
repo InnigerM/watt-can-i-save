@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-step-two',
@@ -7,11 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./step-two.component.scss'],
 })
 export class StepTwoComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private stateService: StateService) {}
 
   ngOnInit(): void {}
 
-  submit(){
+  submit() {
+    this.stateService.setInitalSetupCompleted(true);
     this.router.navigate(['categories']);
   }
 }
