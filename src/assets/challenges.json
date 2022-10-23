@@ -106,5 +106,14 @@
     "category": "warmwasser",
     "potentialKwhSaved": 18,
     "solved": false
+  },
+  {
+    "id": 13,
+    "title": "Heizen Challenge",
+    "description": "Durch korrektes Lüften Energie sparen",
+    "longText": "Regelmäßiges Stoßlüften statt Kippstellung, so lautet in der Regel die Devise, wenn es um das richtige Lüften geht. Indem Sie mehrere Male am Tag die Fenster für einige Minuten weit öffnen, verhindern Sie, dass die umgebenden Wände auskühlen. Dies ist vor allem in Hinblick auf die Schimmelbildung wichtig: Sind die Raumwände kühler als die Luft, entsteht dort Feuchtigkeit – ideale Bedingungen für Schimmel.",
+    "category": "heizen",
+    "potentialKwhSaved": 200,
+    "solved": false
   }
 ]
