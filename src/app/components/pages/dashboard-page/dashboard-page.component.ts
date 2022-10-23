@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Statistics } from 'src/app/models/statistics';
+import { ChallengesService } from 'src/app/services/challenges.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -9,13 +11,17 @@ export class DashboardPageComponent implements OnInit {
 
   level: number = 1;
   points: number = 1000;
-  savings: number = 360;
-  completedChallenges: number = 2;
   pointsForNextLevel: number = 100;
+  statistics: Statistics;
+  percentageSaved: number;
 
-  constructor() { }
+
+  constructor(private challengesService: ChallengesService) { }
 
   ngOnInit(): void {
+    this.statistics = this.challengesService.getStatistics();
+    this.percentageSaved = (this.statistics.savings / this.statistics.totalAmount) * 100
   }
+
 
 }
