@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StateService } from 'src/app/services/state.service';
@@ -26,7 +26,7 @@ export class WaterQuestionsComponent {
     showerDuration: new FormControl(null, Validators.required),
     showerTemp: new FormControl(null, Validators.required),
     hasEcoShowerHead: new FormControl(null, Validators.required),
-    coldWaterForHands: new FormControl('', Validators.required),
+    coldWaterForHands: new FormControl(null, Validators.required),
   });
 
   constructor(
@@ -63,6 +63,7 @@ export class WaterQuestionsComponent {
 
   onSubmit = () => {
     const values = this.waterForm.value;
+    this.challengeService.setChallengeSolved(11, values.showerDuration < 5);
     this.challengeService.setChallengeSolved(
       10,
       !['kalt', 'lauwarm'].find((v) => values.showerTemp === v)

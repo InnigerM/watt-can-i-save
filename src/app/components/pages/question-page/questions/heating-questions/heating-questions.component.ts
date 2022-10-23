@@ -39,7 +39,8 @@ export class HeatingQuestionsComponent {
 
   onSubmit = () => {
     const values = this.heatingForm.value;
-    // TODO inni: connect with challenges
+    this.challengeService.setChallengeSolved(7, values.roomTemp <= 20);
+    this.challengeService.setChallengeSolved(13, values.airing);
     this.stateService.setQuestionsSolved('heizen');
     this.router.navigate(['categories/heizen'])
   };
