@@ -15,6 +15,7 @@ export class LightSwitchComponent implements OnInit {
 
   switchTheme() {
     const html = document.querySelector('html') as HTMLElement;
+    const glow = document.querySelector('.glow') as HTMLElement;
 
     if (this.isDarkThemeEnabled) {
       html.dataset['theme'] = 'light';
