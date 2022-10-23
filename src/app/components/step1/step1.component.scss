@@ -1,20 +1,37 @@
-.cities {
+.container {
   display: flex;
+  padding: 30% 15%;
   flex-direction: column;
   margin-top: 10px;
   gap: 15px;
+  align-items: center;
 
-  .city {
-    border-radius: 8px;
-
-    .electricity-price {
-      justify-content: flex-start;
-      gap: 25px;
-
-
-      .text {
-        display: flex;
-        flex-direction: column;
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .cities {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    .city {
+      border-radius: 8px;
+      width: 100%;
+  
+      .electricity-price {
+        justify-content: flex-start;
+        gap: 25px;
+  
+  
+        .text {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

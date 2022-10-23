@@ -31,4 +31,12 @@ export class Step1Component {
     this.router.navigate(['/rooms']);
   }
 
+  comparePrices(first: ElectricityPrice, second: ElectricityPrice): boolean{
+    if(this.selectedPrice === null){
+      return false;
+    }else{
+      return first.municipality === second.municipality;
+    }
+  }
+
 }
