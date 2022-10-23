@@ -1,0 +1,102 @@
+<div class="mx-8">
+  <h1 class="text-2xl">Fragen zum Haushalt</h1>
+  <form [formGroup]="waterForm" (ngSubmit)="onSubmit()">
+    <ul class="steps steps-vertical step-primary">
+      <li class="step step-primary">
+        <div class="mt-40 w-11/12">
+          <label id="showerDuration">Wie lange duschst du ca.?</label>
+          <p class="text-3xl font-bold text-center my-4">
+            <span class="text-accent">{{ durationNumber }}</span>
+            <span class="font-thin"> min</span></p>
+          <input type="range"
+                 min="1"
+                 max="20"
+                 (change)="setDuration($event)"
+                 (dragleave)="onFormChange('showerTemp')"
+                 [value]="durationNumber"
+                 class="range" step="1"/>
+          <div class="w-full flex justify-between text-xs">
+            <span *ngFor="let duration of [0, 1, 2, 3, 4]" class="w-1/5">
+              <span [class]="'label-margin-' + duration">{{ duration === 0 ? 1 : (duration * 5) }}</span>
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <button class="btn btn-sm btn-primary mt-4" type="button" (click)="patchDuration()">
+              ok
+            </button>
+          </div>
+        </div>
+      </li>
+      <li [class]="waterForm.controls['showerDuration'].value !== null ? 'step step-primary' : 'step'">
+        <div class="mt-40 w-11/12">
+          <label id="showerTemp">Wie duschst du?</label>
+          <p class="text-3xl font-bold text-center my-4 text-accent">{{ showerTempLabel }}</p>
+          <input type="range"
+                 min="0"
+                 max="3"
+                 (change)="setTempLabel($event)"
+                 (dragleave)="onFormChange('hasEcoShowerHead')"
+                 [value]="showerTempNumber"
+                 class="range" step="1"/>
+          <div class="w-full flex justify-between text-xs">
+            <span *ngFor="let temp of showerTemps" class="w-1/5">
+              <span [class]="'label-margin-' + temp.value">{{ temp.label }}</span>
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <button class="btn btn-sm btn-primary mt-4" type="button" (click)="patchTemp()">
+              ok
+            </button>
+          </div>
+        </div>
+      </li>
+      <li  [class]="waterForm.controls['showerTemp'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control my-50-prozent">
+          <label id="hasEcoShowerHead" class="mt-8">Hast du Eco-Armaturen für deine Duschbrause und deine Wasserhähne?</label>
+          <div class="flex">
+            <label class="label cursor-pointer justify-start w-1/2">
+              <input (change)="onFormChange('coldWaterForHands')" formControlName="hasEcoShowerHead" type="radio"
+                     name="hasEcoShowerHead" class="radio radio-primary"
+                     checked [value]="true"/>
+              <span class="label-text ml-4">Ja</span>
+            </label>
+            <label class="label cursor-pointer justify-start w-1/2">
+              <input (change)="onFormChange('coldWaterForHands')" formControlName="hasEcoShowerHead" type="radio"
+                     name="hasEcoShowerHead" class="radio radio-primary"
+                     checked [value]="false"/>
+              <span class="label-text ml-4">Nein</span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="waterForm.controls['hasEcoShowerHead'].value !== null ? 'step step-primary' : 'step'">
+        <div class="form-control my-50-prozent">
+          <label id="coldWaterForHands" class="mt-8">Wie wäschst du deine Hände?</label>
+          <div>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('submit-button')" formControlName="coldWaterForHands" type="radio"
+                     name="coldWaterForHands" class="radio radio-primary"
+                     checked [value]="true"/>
+              <span class="label-text ml-4">Mit kaltem Wasser</span>
+              <span class="ml-4 material-symbols-outlined text-secondary">
+                ac_unit
+              </span>
+            </label>
+            <label class="label cursor-pointer justify-start">
+              <input (change)="onFormChange('submit-button')" formControlName="coldWaterForHands" type="radio"
+                     name="coldWaterForHands" class="radio radio-primary"
+                     checked [value]="false"/>
+              <span class="label-text ml-4">Mit warmem Wasser</span>
+              <span class="ml-4 material-symbols-outlined text-secondary">
+                local_fire_department
+              </span>
+            </label>
+          </div>
+        </div>
+      </li>
+      <li [class]="waterForm.controls['coldWaterForHands'].value !== '' ? 'step step-primary' : 'step'">
+        <button class="btn btn-primary my-48" type="submit" id="submit-button">Let's go</button>
+      </li>
+    </ul>
+  </form>
+</div>
