@@ -65,7 +65,7 @@
       <li [class]="householdForm.controls['heatUntilEnd'].value !== null ? 'step step-primary' : 'step'">
         <div class="mt-40">
           <label id="efficiencyClass">Welche Effizienzklasse hat dein Backofen?</label>
-          <p class="text-3xl font-bold text-center my-4">{{ efficiencyLabel }}</p>
+          <p class="text-3xl font-bold text-center my-4 text-accent">{{ efficiencyLabel }}</p>
           <input type="range"
                  min="0"
                  max="6"
@@ -86,7 +86,7 @@
         </div>
       </li>
       <li [class]="householdForm.controls['efficiencyClass'].value !== '' ? 'step step-primary' : 'step'">
-        <button class="btn btn-primary my-48" type="submit" id="submit-button">Let's go</button>
+        <button class="btn btn-primary my-48" [disabled]="!householdForm.valid" type="submit" id="submit-button">Let's go</button>
       </li>
     </ul>
   </form>
