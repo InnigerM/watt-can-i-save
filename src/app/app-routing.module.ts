@@ -6,6 +6,7 @@ import { DashboardPageComponent } from './components/pages/dashboard-page/dashbo
 import { StepTwoComponent } from './components/step-two/step-two.component';
 import { Step1Component } from './components/step1/step1.component';
 import { CategoryOverviewComponent } from './components/category-overview/category-overview.component';
+import { ChallengesDetailComponent } from './components/challenges/challenges-detail/challenges-detail.component';
 
 const routes: Routes = [
   {
@@ -19,12 +20,10 @@ const routes: Routes = [
     component: StepTwoComponent,
   },
   {
-    // TODO: insert categories screen here
     path: 'categories',
     component: CategoryOverviewComponent,
   },
   {
-    // TODO: insert challenges overview screen here
     path: 'categories/:category',
     component: ChallengesComponent,
   },
@@ -34,9 +33,8 @@ const routes: Routes = [
     component: AppComponent,
   },
   {
-    // TODO: insert challenges detail screen here
     path: 'categories/:category/challenges/:id',
-    component: AppComponent,
+    component: ChallengesDetailComponent,
   },
   {
     path: 'dashboard',

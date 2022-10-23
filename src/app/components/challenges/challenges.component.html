@@ -7,7 +7,7 @@
     <div
       *ngFor="let challenge of challenges"
       class="p-4 bg-neutral flex flex-col rounded-lg relative"
-      (click)="solveChallenge(challenge)">
+      (click)="navigateToDetail(challenge.id)">
       <div class="flex-1">
         <p class="text-3xl">{{challenge.title}}</p>
         <span class="text-lg font-thin">{{challenge.description}}</span>
