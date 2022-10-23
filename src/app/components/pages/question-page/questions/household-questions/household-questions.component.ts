@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-household-questions',
@@ -31,7 +32,7 @@ export class HouseholdQuestionsComponent {
     }
   )
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private stateService: StateService) {}
 
   onFormChange = (formControlName: string) => {
     document.getElementById(formControlName)?.scrollIntoView({
@@ -48,6 +49,9 @@ export class HouseholdQuestionsComponent {
     this.onFormChange('submit-button');
   }
 
-  onSubmit = () => this.router.navigate(['categories/haushalt']);
+  onSubmit = () => {
+    this.stateService.setQuestionsSolved('haushalt');
+    this.router.navigate(['categories/haushalt']);
+  };
 
 }
