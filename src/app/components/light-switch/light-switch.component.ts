@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-light-switch',
@@ -6,12 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./light-switch.component.scss'],
 })
 export class LightSwitchComponent implements OnInit {
-  constructor() {}
+  isDarkThemeEnabled: boolean = false;
 
-  ngOnInit(): void {
-    const bulbOn: String = 'bulb_on.png';
-    const bulbOff: String = 'bulb_off.png';
+  constructor(private router: Router) {}
 
-    function changeBulb() {}
+  ngOnInit(): void {}
+
+  switchTheme() {
+    const html = document.querySelector('html') as HTMLElement;
+
+    if (this.isDarkThemeEnabled) {
+      html.dataset['theme'] = 'light';
+    } else {
+      html.dataset['theme'] = 'night';
+    }
+
+    this.isDarkThemeEnabled = !this.isDarkThemeEnabled;
+  }
+
+  routeToCategories() {
+    this.router.navigate(['/categories']);
   }
 }
