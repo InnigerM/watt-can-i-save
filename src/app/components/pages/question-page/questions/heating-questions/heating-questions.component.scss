@@ -1,0 +1,7 @@
+$keys: 0, 1, 2, 3;
+
+@each $k in $keys {
+  .label-margin-#{$k} {
+    margin-left: calc(#{$k} * 25%);
+  }
+}
